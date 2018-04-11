@@ -1,0 +1,2629 @@
+<html>
+    <head>
+        <script src="../../canvasjs.min.js"></script>
+        <script src="../../jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        
+        //Part A Submit button
+        function Fill_Data(){
+            Fill_A();
+            Fill_B();
+            Fill_C();
+            Fill_D();
+        }
+        
+        function Fill_A(){;
+            
+            //for A11
+            if (document.getElementById('6a').value >= 6 && document.getElementById('22a').value >= 9){
+                document.getElementById('optiona11yes').checked = true;             
+            }
+            else {
+                document.getElementById('optiona11no').checked = true;
+            }
+            document.getElementById('optiona11yes').disabled = true;   
+            document.getElementById('optiona11no').disabled = true;
+                          
+            //for A12
+            if (document.getElementById('6b').value >= 6 && document.getElementById('22b').value >= 9){
+                document.getElementById('optiona12yes').checked = true;             
+            }
+            else {
+                document.getElementById('optiona12no').checked = true;
+            }
+            document.getElementById('optiona12yes').disabled = true;   
+            document.getElementById('optiona12no').disabled = true;
+                          
+            //for A13
+            if (document.getElementById('6c').value >= 6 && document.getElementById('22c').value >= 9){
+                document.getElementById('optiona13yes').checked = true;             
+            }
+            else {
+                document.getElementById('optiona13no').checked = true;
+            }
+            document.getElementById('optiona13yes').disabled = true;   
+            document.getElementById('optiona13no').disabled = true;
+                          
+            //for A14
+            if (document.getElementById('6d').value >= 6 && document.getElementById('22d').value >= 9){
+                document.getElementById('optiona14yes').checked = true;             
+            }
+            else {
+                document.getElementById('optiona14no').checked = true;
+            }
+            document.getElementById('optiona14yes').disabled = true;   
+            document.getElementById('optiona14no').disabled = true;
+                          
+            //for A21                          
+            if (document.getElementById('hob').value <= (1.5 * (parseInt(document.getElementById('6a').value) +                       
+                                                                parseInt(document.getElementById('mswinfront').value)))){
+                document.getElementById('optiona21yes').checked = true;             
+            }
+            else {
+                document.getElementById('optiona21no').checked = true;
+            }
+            document.getElementById('optiona21yes').disabled = true;   
+            document.getElementById('optiona21no').disabled = true;
+                          
+            //for A22                      
+            if (document.getElementById('mswinfront').value >= 12){
+                document.getElementById('optiona22yes').checked = true;             
+            }
+            else {
+                document.getElementById('optiona22no').checked = true;
+            }
+            document.getElementById('optiona22yes').disabled = true;   
+            document.getElementById('optiona22no').disabled = true;
+                          
+            //for A24                 
+            if (document.getElementById('dogfms').value >= 6){
+                document.getElementById('optiona24yes').checked = true;             
+            }
+            else {
+                document.getElementById('optiona24no').checked = true;
+            }
+            document.getElementById('optiona24yes').disabled = true;   
+            document.getElementById('optiona24no').disabled = true;
+                          
+            //for A25           
+            if (parseFloat(document.getElementById('mgheight').value) >= parseFloat(4.5) && document.getElementById('mgwidth').value >= 6){
+                document.getElementById('optiona25yes').checked = true;             
+            }
+            else {
+                document.getElementById('optiona25no').checked = true;
+            }
+            document.getElementById('optiona25yes').disabled = true;   
+            document.getElementById('optiona25no').disabled = true;
+        }
+        
+        function Fill_B(){;
+            
+            //for B13
+            if ((parseInt(document.getElementById('swindividual').value) / 
+                 parseInt(document.getElementById('occupancyloadonf').value)).toFixed(3) > 0.01){
+                document.getElementById('optionb13yes').checked = true;             
+            }
+            else {
+                document.getElementById('optionb13no').checked = true;
+            }
+            document.getElementById('optionb13yes').disabled = true;   
+            document.getElementById('optionb13no').disabled = true;
+                          
+            //for B14
+            if ((parseInt(document.getElementById('sttotal').value) / parseInt(document.getElementById('occupancyloadinb').value)).toFixed(3) > 
+                0.01){
+                document.getElementById('optionb14yes').checked = true;             
+            }
+            else {
+                document.getElementById('optionb14no').checked = true;
+            }
+            document.getElementById('optionb14yes').disabled = true;   
+            document.getElementById('optionb14no').disabled = true;
+                   
+            //for B25
+            if (document.getElementById('classob').value == "A4"){
+                if((parseFloat(document.getElementById('swindividual').value)).toFixed(3) > 1.25){
+                    document.getElementById('optionb25yes').checked = true;             
+                }
+                else {
+                    document.getElementById('optionb25no').checked = true;
+                }
+            }
+            else {
+                if((parseFloat(document.getElementById('swindividual').value)).toFixed(2) > 1.5){
+                    document.getElementById('optionb25yes').checked = true;             
+                }
+                else {
+                    document.getElementById('optionb25no').checked = true;
+                }
+            }
+            document.getElementById('optionb25yes').disabled = true;   
+            document.getElementById('optionb25no').disabled = true;
+                          
+            //for B26
+            if ((parseFloat(document.getElementById('cheight').value)).toFixed(2) > 2.4 && (parseInt(document.getElementById('cwidth').value) / 
+                parseInt(document.getElementById('occupancyloadonf').value)).toFixed(3) > 0.01){
+                document.getElementById('optionb26yes').checked = true;             
+            }
+            else {
+                document.getElementById('optionb26no').checked = true;
+            }
+            document.getElementById('optionb26yes').disabled = true;   
+            document.getElementById('optionb26no').disabled = true;
+                          
+            //for B31
+            if (document.getElementById('Sprinklerfloor').value == "Yes" && document.getElementById('mtdfloor').value < 45){
+                document.getElementById('optionb31yes').checked = true;
+            }
+            else {
+                if(document.getElementById('mtdfloor').value < 30){
+                    document.getElementById('optionb31yes').checked = true;             
+                }
+                else {
+                    document.getElementById('optionb31no').checked = true;
+                }
+            }
+            document.getElementById('optionb31yes').disabled = true;   
+            document.getElementById('optionb31no').disabled = true;
+                          
+            //for B32
+            if (document.getElementById('bbp').value == "y" && document.getElementById('Sprinklerbasement').value == "sby" && 
+                document.getElementById('mtdfloor').value < 45){
+                    document.getElementById('optionb32yes').checked = true;
+            }
+            else {
+                if(document.getElementById('bbp').value == "y" && document.getElementById('Sprinklerbasement').value == "sbn" &&   
+                   document.getElementById('mtdfloor').value < 30){
+                    document.getElementById('optionb32yes').checked = true;             
+                }
+                else {
+                    document.getElementById('optionb32no').checked = true;
+                }
+            }
+            document.getElementById('optionb32yes').disabled = true;   
+            document.getElementById('optionb32no').disabled = true;
+                          
+            //for B33
+            if (document.getElementById('deadend').value < 15){
+                document.getElementById('optionb33yes').checked = true;             
+            }
+            else {
+                document.getElementById('optionb33no').checked = true;
+            }
+            document.getElementById('optionb33yes').disabled = true;   
+            document.getElementById('optionb33no').disabled = true;
+                          
+            //for B42
+            if ((0.3 * parseInt(document.getElementById('occupancyloadonf').value)) <= document.getElementById('rarea').value){
+                document.getElementById('optionb42yes').checked = true;             
+            }
+            else {
+                document.getElementById('optionb42no').checked = true;
+            }
+            document.getElementById('optionb42yes').disabled = true;   
+            document.getElementById('optionb42no').disabled = true;
+        }
+        
+        function Fill_C(){;
+            
+            //for C21
+            if (document.getElementById('csfloor').value >= 750){
+                document.getElementById('optionc21yes').checked = true;             
+            }
+            else {
+                document.getElementById('optionc21no').checked = true;
+            }
+            document.getElementById('optionc21yes').disabled = true;   
+            document.getElementById('optionc21no').disabled = true;
+                          
+            //for C22
+            if (document.getElementById('csbasement').value >= 3000){
+                document.getElementById('optionc22yes').checked = true;             
+            }
+            else {
+                document.getElementById('optionc22no').checked = true;
+            }
+            document.getElementById('optionc22yes').disabled = true;   
+            document.getElementById('optionc22no').disabled = true;
+        }
+        
+        function Fill_D(){;
+            
+            //for D41
+            if (document.getElementById('Sprinklerfloor').value == "sfy"){
+                document.getElementById('optiond41yes').checked = true;             
+            }
+            else {
+                document.getElementById('optiond41no').checked = true;
+            }
+            document.getElementById('optiond41yes').disabled = true;   
+            document.getElementById('optiond41no').disabled = true;
+                          
+            //for D43
+            if (document.getElementById('Sprinklerbasement').value == "sby"){
+                document.getElementById('optiond43yes').checked = true;             
+            }
+            else {
+                document.getElementById('optiond43no').checked = true;
+            }
+            document.getElementById('optiond43yes').disabled = true;   
+            document.getElementById('optiond43no').disabled = true;
+                          
+            //for D51 
+            if (document.getElementById('classob').value == "A4" && (15 <= document.getElementById('hob').value && 
+                    document.getElementById('hob').value <= 35) && document.getElementById('tcunderground').value >= 0){
+                        document.getElementById('optiond51yes').checked = true;
+            }
+            else if (document.getElementById('classob').value == "A4" && (35 <= document.getElementById('hob').value && 
+                    document.getElementById('hob').value <= 45) && document.getElementById('tcunderground').value >= 75000){
+                        document.getElementById('optiond51yes').checked = true;
+            }
+            else if (document.getElementById('classob').value == "A4" && document.getElementById('hob').value > 45 && 
+                     document.getElementById('tcunderground').value > 150000){
+                        document.getElementById('optiond51yes').checked = true;
+            }
+            else if (document.getElementById('classob').value == "A5" && document.getElementById('hob').value < 30 && 
+                     document.getElementById('tcunderground').value > 150000){
+                        document.getElementById('optiond51yes').checked = true;
+            }
+            else if (document.getElementById('classob').value == "A5" && document.getElementById('hob').value > 30 && 
+                     document.getElementById('tcunderground').value > 200000){
+                        document.getElementById('optiond51yes').checked = true;
+            }
+            else {
+                document.getElementById('optiond51no').checked = true;
+            }
+            document.getElementById('optiond51yes').disabled = true;   
+            document.getElementById('optiond51no').disabled = true;
+                          
+            //for D52
+            if (document.getElementById('classob').value == "A4" && (document.getElementById('hob').value < 35) &&         
+                document.getElementById('tcroof').value > 25000){
+                        document.getElementById('optiond52yes').checked = true;
+            }
+            else if (document.getElementById('classob').value == "A4" && document.getElementById('hob').value > 35 && 
+                     document.getElementById('tcroof').value > 10000){
+                        document.getElementById('optiond52yes').checked = true;
+            }
+            else if (document.getElementById('classob').value == "A5" && document.getElementById('hob').value > 15 && 
+                     document.getElementById('tcroof').value > 20000){
+                        document.getElementById('optiond52yes').checked = true;
+            }
+            else {
+                document.getElementById('optiond52no').checked = true;
+            }
+            document.getElementById('optiond52yes').disabled = true;   
+            document.getElementById('optiond52no').disabled = true;
+        }
+        
+        //Part B Submit button
+        function Calculate_A() {
+        //For A
+            var A1, A11, A12, A13, A14;
+            if (document.getElementById('optiona11yes').checked) {
+              A11 = parseFloat(document.getElementById('optiona11now').value);
+            }
+            else
+                A11 = 0;
+            if (document.getElementById('optiona12yes').checked) {
+              A12 = parseFloat(document.getElementById('optiona12now').value);
+            }
+            else
+                A12 = 0;
+            if (document.getElementById('optiona13yes').checked) {
+              A13 = parseFloat(document.getElementById('optiona13now').value);
+            }
+            else
+                A13 = 0;
+            if (document.getElementById('optiona14yes').checked) {
+              A14 = parseFloat(document.getElementById('optiona14now').value);
+            }
+            else
+                A14 = 0;
+            
+            A1 = A11+A12+A13+A14;
+            //alert('A1 = '+A1);
+            
+            var A2, A21, A22, A23, A24, A25;
+            if (document.getElementById('optiona21yes').checked) {
+              A21 = parseFloat(document.getElementById('optiona21now').value);
+            }
+            else
+                A21 = 0;
+            if (document.getElementById('optiona22yes').checked) {
+              A22 = parseFloat(document.getElementById('optiona22now').value);
+            }
+            else
+                A22 = 0;
+            if (document.getElementById('optiona23yes').checked) {
+              A23 = parseFloat(document.getElementById('optiona23now').value);
+            }
+            else
+                A23 = 0;
+            if (document.getElementById('optiona24yes').checked) {
+              A24 = parseFloat(document.getElementById('optiona24now').value);
+            }
+            else
+                A24 = 0;
+            if (document.getElementById('optiona25yes').checked) {
+              A25 = parseFloat(document.getElementById('optiona25now').value);
+            }
+            else
+                A25 = 0;
+            
+            A2 = A21+A22+A23+A24+A25;
+            //alert('A2 = '+A2);
+            
+            var A3, A31, A32, A33, A34;
+            if (document.getElementById('optiona31yes').checked) {
+              A31 = parseFloat(document.getElementById('optiona31now').value);
+            }
+            else
+                A31 = 0;
+            if (document.getElementById('optiona32yes').checked) {
+              A32 = parseFloat(document.getElementById('optiona32now').value);
+            }
+            else
+                A32 = 0;
+            if (document.getElementById('optiona33yes').checked) {
+              A33 = parseFloat(document.getElementById('optiona33now').value);
+            }
+            else
+                A33 = 0;
+            if (document.getElementById('optiona34yes').checked) {
+              A34 = parseFloat(document.getElementById('optiona34now').value);
+            }
+            else
+                A34 = 0;
+            
+            A3 = A31+A32+A33+A34;
+            //alert('A3 = '+A3);
+            
+            var IA, A;
+            A = (A1*parseFloat(document.getElementById('optiona1now').value)) + (A2*parseFloat(document.getElementById('optiona2now').value)) + (A3*parseFloat(document.getElementById('optiona3now').value));
+            IA = A;
+            //alert('IA = '+IA.toFixed(2));
+            return IA.toFixed(2);
+            //End for A
+        }
+        
+        function Calculate_B() {
+        //For B
+            var B1, B11, B12, B13, B14;
+            if (document.getElementById('optionb11yes').checked) {
+              B11 = parseFloat(document.getElementById('optionb11now').value);
+            }
+            else
+                B11 = 0;
+            if (document.getElementById('optionb12yes').checked) {
+              B12 = parseFloat(document.getElementById('optionb12now').value);
+            }
+            else
+                B12 = 0;
+            if (document.getElementById('optionb13yes').checked) {
+              B13 = parseFloat(document.getElementById('optionb13now').value);
+            }
+            else
+                B13 = 0;
+            if (document.getElementById('optionb14yes').checked) {
+              B14 = parseFloat(document.getElementById('optionb14now').value);
+            }
+            else
+                B14 = 0;
+            
+            B1 = B11+B12+B13+B14;
+            //alert('B1 = '+B1);
+            
+            var B2, B21, B22, B23, B24, B25, B26;
+            if (document.getElementById('optionb21yes').checked) {
+              B21 = parseFloat(document.getElementById('optionb21now').value);
+            }
+            else
+                B21 = 0;
+            if (document.getElementById('optionb22yes').checked) {
+              B22 = parseFloat(document.getElementById('optionb22now').value);
+            }
+            else
+                B22 = 0;
+            if (document.getElementById('optionb23yes').checked) {
+              B23 = parseFloat(document.getElementById('optionb23now').value);
+            }
+            else
+                B23 = 0;
+            if (document.getElementById('optionb24yes').checked) {
+              B24 = parseFloat(document.getElementById('optionb24now').value);
+            }
+            else
+                B24 = 0;
+            if (document.getElementById('optionb25yes').checked) {
+              B25 = parseFloat(document.getElementById('optionb25now').value);
+            }
+            else
+                B25 = 0;
+            if (document.getElementById('optionb26yes').checked) {
+              B26 = parseFloat(document.getElementById('optionb26now').value);
+            }
+            else
+                B26 = 0;
+            
+            B2 = B21+B22+B23+B24+B25+B26;
+            //alert('B2 = '+B2);
+            
+            var B3, B31, B32, B33, B34;
+            if (document.getElementById('optionb31yes').checked) {
+              B31 = parseFloat(document.getElementById('optionb31now').value);
+            }
+            else
+                B31 = 0;
+            if (document.getElementById('optionb32yes').checked) {
+              B32 = parseFloat(document.getElementById('optionb32now').value);
+            }
+            else
+                B32 = 0;
+            if (document.getElementById('optionb33yes').checked) {
+              B33 = parseFloat(document.getElementById('optionb33now').value);
+            }
+            else
+                B33 = 0;
+            if (document.getElementById('optionb34yes').checked) {
+              B34 = parseFloat(document.getElementById('optionb34now').value);
+            }
+            else
+                B34 = 0;
+            
+            B3 = B31+B32+B33+B34;
+            //alert('B3 = '+B3);
+            
+            var B4, B41, B42, B43;
+            if (document.getElementById('optionb41yes').checked) {
+              B41 = parseFloat(document.getElementById('optionb41now').value);
+            }
+            else
+                B41 = 0;
+            if (document.getElementById('optionb42yes').checked) {
+              B42 = parseFloat(document.getElementById('optionb42now').value);
+            }
+            else
+                B42 = 0;
+            if (document.getElementById('optionb43yes').checked) {
+              B43 = parseFloat(document.getElementById('optionb43now').value);
+            }
+            else
+                B43 = 0;
+            
+            B4 = B41+B42+B43;
+            //alert('B4 = '+B4);
+            
+            var B5, B51, B52, B53, B54;
+            if (document.getElementById('optionb51yes').checked) {
+              B51 = parseFloat(document.getElementById('optionb51now').value);
+            }
+            else
+                B51 = 0;
+            if (document.getElementById('optionb52yes').checked) {
+              B52 = parseFloat(document.getElementById('optionb52now').value);
+            }
+            else
+                B52 = 0;
+            if (document.getElementById('optionb53yes').checked) {
+              B53 = parseFloat(document.getElementById('optionb53now').value);
+            }
+            else
+                B53 = 0;
+            if (document.getElementById('optionb54yes').checked) {
+              B54 = parseFloat(document.getElementById('optionb54now').value);
+            }
+            else
+                B54 = 0;
+            
+            B5 = B51+B52+B53+B54;
+            //alert('B5 = '+B5);
+            
+            var B6, B61, B62, B63, B64;
+            if (document.getElementById('optionb61yes').checked) {
+              B61 = parseFloat(document.getElementById('optionb61now').value);
+            }
+            else
+                B61 = 0;
+            if (document.getElementById('optionb62yes').checked) {
+              B62 = parseFloat(document.getElementById('optionb62now').value);
+            }
+            else
+                B62 = 0;
+            if (document.getElementById('optionb63yes').checked) {
+              B63 = parseFloat(document.getElementById('optionb63now').value);
+            }
+            else
+                B63 = 0;
+            if (document.getElementById('optionb64yes').checked) {
+              B64 = parseFloat(document.getElementById('optionb64now').value);
+            }
+            else
+                B64 = 0;
+            
+            B6 = B61+B62+B63+B64;
+            //alert('B6 = '+B6);
+            
+            var IB, B;
+            B = (B1*parseFloat(document.getElementById('optionb1now').value)) + (B2*parseFloat(document.getElementById('optionb2now').value)) + (B3*parseFloat(document.getElementById('optionb3now').value)) + (B4*parseFloat(document.getElementById('optionb4now').value)) + (B5*parseFloat(document.getElementById('optionb5now').value)) + (B6*parseFloat(document.getElementById('optionb6now').value));
+            IB = B;
+            //alert('IB = '+IB.toFixed(2));
+            return IB.toFixed(2);
+            //End for B
+        }
+        
+        function Calculate_C() {
+        //For C
+            var C1, C11, C12, C13, C14;
+            if (document.getElementById('optionc11yes').checked) {
+              C11 = parseFloat(document.getElementById('optionc11now').value);
+            }
+            else
+                C11 = 0;
+            if (document.getElementById('optionc12yes').checked) {
+              C12 = parseFloat(document.getElementById('optionc12now').value);
+            }
+            else
+                C12 = 0;
+            if (document.getElementById('optionc13yes').checked) {
+              C13 = parseFloat(document.getElementById('optionc13now').value);
+            }
+            else
+                C13 = 0;
+            if (document.getElementById('optionc14yes').checked) {
+              C14 = parseFloat(document.getElementById('optionc14now').value);
+            }
+            else
+                C14 = 0;
+            
+            C1 = C11+C12+C13+C14;
+            //alert('C1 = '+C1);
+            
+            var C2, C21, C22, C23, C24;
+            if (document.getElementById('optionc21yes').checked) {
+              C21 = parseFloat(document.getElementById('optionc21now').value);
+            }
+            else
+                C21 = 0;
+            if (document.getElementById('optionc22yes').checked) {
+              C22 = parseFloat(document.getElementById('optionc22now').value);
+            }
+            else
+                C22 = 0;
+            if (document.getElementById('optionc23yes').checked) {
+              C23 = parseFloat(document.getElementById('optionc23now').value);
+            }
+            else
+                C23 = 0;
+            if (document.getElementById('optionc24yes').checked) {
+              C24 = parseFloat(document.getElementById('optionc24now').value);
+            }
+            else
+                C24 = 0;
+            
+            C2 = C21+C22+C23+C24;
+            //alert('C2 = '+C2);
+            
+            var C3, C31, C32, C33;
+            if (document.getElementById('optionc31yes').checked) {
+              C31 = parseFloat(document.getElementById('optionc31now').value);
+            }
+            else
+                C31 = 0;
+            if (document.getElementById('optionc32yes').checked) {
+              C32 = parseFloat(document.getElementById('optionc32now').value);
+            }
+            else
+                C32 = 0;
+            if (document.getElementById('optionc33yes').checked) {
+              C33 = parseFloat(document.getElementById('optionc33now').value);
+            }
+            else
+                C33 = 0;
+            
+            C3 = C31+C32+C33;
+            //alert('C3 = '+C3);
+            
+            var C4, C41, C42, C43;
+            if (document.getElementById('optionc41yes').checked) {
+              C41 = parseFloat(document.getElementById('optionc41now').value);
+            }
+            else
+                C41 = 0;
+            if (document.getElementById('optionc42yes').checked) {
+              C42 = parseFloat(document.getElementById('optionc42now').value);
+            }
+            else
+                C42 = 0;
+            if (document.getElementById('optionc43yes').checked) {
+              C43 = parseFloat(document.getElementById('optionc43now').value);
+            }
+            else
+                C43 = 0;
+            
+            C4 = C41+C42+C43;
+            //alert('C4 = '+C4);
+            
+            var IC, C;
+            C = (C1*parseFloat(document.getElementById('optionc1now').value)) + (C2*parseFloat(document.getElementById('optionc2now').value)) + (C3*parseFloat(document.getElementById('optionc3now').value)) + (C4*parseFloat(document.getElementById('optionc4now').value));
+            IC = C;
+            //alert('IC = '+IC.toFixed(2));
+            return IC.toFixed(2);
+            //End for C
+        }        
+        
+        function Calculate_D() {
+        //For D
+            var D1, D11, D12;
+            if (document.getElementById('optiond11yes').checked) {
+              D11 = parseFloat(document.getElementById('optiond11now').value);
+            }
+            else
+                D11 = 0;
+            if (document.getElementById('optiond12yes').checked) {
+              D12 = parseFloat(document.getElementById('optiond12now').value);
+            }
+            else
+                D12 = 0;
+            
+            D1 = D11+D12;
+            //alert('D1 = '+D1);
+            
+            var D2, D21, D22, D23, D24, D25;
+            if (document.getElementById('optiond21yes').checked) {
+              D21 = parseFloat(document.getElementById('optiond21now').value);
+            }
+            else
+                D21 = 0;
+            if (document.getElementById('optiond22yes').checked) {
+              D22 = parseFloat(document.getElementById('optiond22now').value);
+            }
+            else
+                D22 = 0;
+            if (document.getElementById('optiond23yes').checked) {
+              D23 = parseFloat(document.getElementById('optiond23now').value);
+            }
+            else
+                D23 = 0;
+            if (document.getElementById('optiond24yes').checked) {
+              D24 = parseFloat(document.getElementById('optiond24now').value);
+            }
+            else
+                D24 = 0;
+            if (document.getElementById('optiond25yes').checked) {
+              D25 = parseFloat(document.getElementById('optiond25now').value);
+            }
+            else
+                D25 = 0;
+            
+            D2 = D21+D22+D23+D24+D25;
+            //alert('D2 = '+D2);
+            
+            var D3, D31, D32, D33, D34;
+            if (document.getElementById('optiond31yes').checked) {
+              D31 = parseFloat(document.getElementById('optiond31now').value);
+            }
+            else
+                D31 = 0;
+            if (document.getElementById('optiond32yes').checked) {
+              D32 = parseFloat(document.getElementById('optiond32now').value);
+            }
+            else
+                D32 = 0;
+            if (document.getElementById('optiond33yes').checked) {
+              D33 = parseFloat(document.getElementById('optiond33now').value);
+            }
+            else
+                D33 = 0;
+            if (document.getElementById('optiond34yes').checked) {
+              D34 = parseFloat(document.getElementById('optiond34now').value);
+            }
+            else
+                D34 = 0;
+            
+            D3 = D31+D32+D33+D34;
+            //alert('D3 = '+D3);
+            
+            var D4, D41, D42, D43;
+            if (document.getElementById('optiond41yes').checked) {
+              D41 = parseFloat(document.getElementById('optiond41now').value);
+            }
+            else
+                D41 = 0;
+            if (document.getElementById('optiond42yes').checked) {
+              D42 = parseFloat(document.getElementById('optiond42now').value);
+            }
+            else
+                D42 = 0;
+            if (document.getElementById('optiond43yes').checked) {
+              D43 = parseFloat(document.getElementById('optiond43now').value);
+            }
+            else
+                D43 = 0;
+            
+            D4 = D41+D42+D43;
+            //alert('D4 = '+D4);
+            
+            var D5, D51, D52, D53;
+            if (document.getElementById('optiond51yes').checked) {
+              D51 = parseFloat(document.getElementById('optiond51now').value);
+            }
+            else
+                D51 = 0;
+            if (document.getElementById('optiond52yes').checked) {
+              D52 = parseFloat(document.getElementById('optiond52now').value);
+            }
+            else
+                D52 = 0;
+            if (document.getElementById('optiond53yes').checked) {
+              D53 = parseFloat(document.getElementById('optiond53now').value);
+            }
+            else
+                D53 = 0;
+            
+            D5 = D51+D52+D53;
+            //alert('D5 = '+D5);
+//            alert('D1='+D1*parseFloat(document.getElementById('optiond1now').value));
+//            alert('D2='+D2*parseFloat(document.getElementById('optiond2now').value));
+//            alert('D3='+D3*parseFloat(document.getElementById('optiond3now').value));
+//            alert('D4='+D4*parseFloat(document.getElementById('optiond4now').value));
+//            alert('D5='+D5*parseFloat(document.getElementById('optiond5now').value));
+            var ID, D;
+            D = (D1*parseFloat(document.getElementById('optiond1now').value)) + (D2*parseFloat(document.getElementById('optiond2now').value)) + (D3*parseFloat(document.getElementById('optiond3now').value)) + (D4*parseFloat(document.getElementById('optiond4now').value)) + (D5*parseFloat(document.getElementById('optiond5now').value));
+            ID = D;            
+            
+            return ID.toFixed(2);
+            //End for D
+        }
+        
+        function Calculate_E() {
+        //For E
+            var E1, E11, E12, E13, E14;
+            if (document.getElementById('optione11yes').checked) {
+              E11 = parseFloat(document.getElementById('optione11now').value);
+            }
+            else
+                E11 = 0;
+            if (document.getElementById('optione12yes').checked) {
+              E12 = parseFloat(document.getElementById('optione12now').value);
+            }
+            else
+                E12 = 0;
+            if (document.getElementById('optione13yes').checked) {
+              E13 = parseFloat(document.getElementById('optione13now').value);
+            }
+            else
+                E13 = 0;
+            if (document.getElementById('optione14yes').checked) {
+              E14 = parseFloat(document.getElementById('optione14now').value);
+            }
+            else
+                E14 = 0;
+            
+            E1 = E11+E12+E13+E14;
+            //alert('E1 = '+E1);
+            
+            var E2, E21, E22, E23, E24;
+            if (document.getElementById('optione21yes').checked) {
+              E21 = parseFloat(document.getElementById('optione21now').value);
+            }
+            else
+                E21 = 0;
+            if (document.getElementById('optione22yes').checked) {
+              E22 = parseFloat(document.getElementById('optione22now').value);
+            }
+            else
+                E22 = 0;
+            if (document.getElementById('optione23yes').checked) {
+              E23 = parseFloat(document.getElementById('optione23now').value);
+            }
+            else
+                E23 = 0;
+            if (document.getElementById('optione24yes').checked) {
+              E24 = parseFloat(document.getElementById('optione24now').value);
+            }
+            else
+                E24 = 0;
+            
+            E2 = E21+E22+E23+E24;
+            //alert('E2 = '+E2);
+            
+            var E3, E31, E32, E33, E34, E35,nob;
+            if (document.getElementById('optione31yes').checked) {
+              E31 = parseFloat(document.getElementById('optione31now').value);
+            }
+            else
+                E31 = 0;
+            if (document.getElementById('optione32yes').checked) {
+              E32 = parseFloat(document.getElementById('optione32now').value);
+            }
+            else
+                E32 = 0;
+            if (document.getElementById('optione33yes').checked) {
+              E33 = parseFloat(document.getElementById('optione33now').value);
+            }
+            else
+                E33 = 0;
+            if (document.getElementById('optione34yes').checked) {
+              E34 = parseFloat(document.getElementById('optione34now').value);
+            }
+            else
+                E34 = 0;
+            if (document.getElementById('optione35yes').checked) {
+              E35 = parseFloat(document.getElementById('optione35now').value);
+            }
+            else
+                E35 = 0;
+            
+            E3 = E31+E32+E33+E34+E35;
+            //alert('E3 = '+E3);
+            
+            var EI, E;
+            E = (E1*parseFloat(document.getElementById('optione1now').value)) + (E2*parseFloat(document.getElementById('optione2now').value)) + (E3*parseFloat(document.getElementById('optione3now').value));
+            EI = E;
+//            alert('E1 = '+E1.toFixed(2));
+//            alert('E2 = '+E2.toFixed(2));
+//            alert('E3 = '+E3.toFixed(2));
+//            alert('E = '+E.toFixed(2));
+            
+            return EI.toFixed(2);
+            //End for E
+        }
+        function nameOfBuilding()
+        {
+            var nob;
+            nob = document.getElementById('nob').value;
+//            alert(nob);
+            return nob;
+        }
+        function total()
+        {
+            var a = parseFloat(Calculate_A());
+            var b = parseFloat(Calculate_B());
+            var c = parseFloat(Calculate_C());
+            var d = parseFloat(Calculate_D());
+            var e = parseFloat(Calculate_E());
+            var totol = (a*parseFloat(document.getElementById('optionanow').value)) + (b*parseFloat(document.getElementById('optionbnow').value)) + (c*parseFloat(document.getElementById('optioncnow').value))+ 
+                + (d*parseFloat(document.getElementById('optiondnow').value)) + 
+                (e*parseFloat(document.getElementById('optionenow').value));
+            alert(totol);
+            return totol;
+        }
+    </script>
+	<script type="text/javascript">
+        function GenerateGraph() {
+            GetData();
+            var a = parseFloat(Calculate_A());
+            var b = parseFloat(Calculate_B());
+            var c = parseFloat(Calculate_C());
+            var d = parseFloat(Calculate_D());
+            var e = parseFloat(Calculate_E());
+            var nob = nameOfBuilding();
+            var total = parseFloat(Calculate_A()*parseFloat(document.getElementById('optionanow').value) + Calculate_B()*parseFloat(document.getElementById('optionbnow').value) + Calculate_C()*parseFloat(document.getElementById('optioncnow').value) + Calculate_D()*parseFloat(document.getElementById('optiondnow').value) + 
+                                   Calculate_E()*parseFloat(document.getElementById('optionenow').value));
+//            parseFloat(Calculate_A()*(0.21) + Calculate_B()*(0.21) + Calculate_C()*(0.19) + Calculate_D()*(0.20) + 
+//                                   Calculate_E()*(0.19));
+           
+			var chart = new CanvasJS.Chart("chartContainer", {
+				title: {
+					text: "Fire Safety Indices : " + nob
+				},
+                axisY: {
+					interval: 0.1
+				},
+				dataPointWidth: 60,
+				data: [{
+					type: "column",
+					indexLabelLineThickness: 2,
+					dataPoints: [
+                            { label: "TFSI" + "("+total.toFixed(2)+")", y: total,color: GetColor(total) },
+				            { label: "IA" + "("+a+")", y: a,color: GetColor(a) },
+				            { label: "IB" + "("+b+")", y: b,color: GetColor(b) },
+				            { label: "IC" + "("+c+")", y: c,color: GetColor(c) },
+				            { label: "ID" + "("+d+")", y: d,color: GetColor(d) },
+                            { label: "IE" + "("+e+")", y: e,color: GetColor(e) }
+					]
+				}]
+			});
+			chart.render();
+		}
+        
+        function GetColor(value){            
+            if(value < 0.25){
+                return "darkred"; 
+            }
+            else if(value > 0.25 && value < 0.48){
+                return "red";
+            }
+            else if(value > 0.48 && value < 0.72){
+                return "Yellow";
+            }
+            else if(value > 0.72 && value < 0.87){
+                return "#00FF00";
+            }
+            else if(value > 0.87){
+                return "Green";}
+        }
+	</script>
+        
+    <script type="text/javascript">
+        function GetData(){
+            var oldResponse = null;
+            var divData = document.getElementById("divPartB");
+            $(divData).find('input[type="text"]').each(function() {
+                if($(this).val()!=''){
+                    //alert($(this).attr('id') + ' , ' + $(this).val());
+                    if(oldResponse==null){
+                        oldResponse = $(this).attr('id') + ' , ' + $(this).val().trim();
+                    }
+                    else{
+                        oldResponse += "|" + $(this).attr('id') + ' , ' + $(this).val().trim();
+                    }
+                }                
+            });
+            
+            if(oldResponse != '' && oldResponse != null){
+                localStorage['myResponseData'] = oldResponse.toString();
+            }            
+            //alert('record='+localStorage['myResponseData']);
+        }
+        
+        $(document).ready(function(){
+            //alert('record='+localStorage['myResponseData']);
+            var response = localStorage['myResponseData'];
+            
+            if(response != undefined){
+                var oldArray = response.split("|");
+                for (i = 0; i < oldArray.length; i++) { 
+                    var qArray = oldArray[i].split(",");
+                    $("#"+qArray[0].toString()).val(qArray[1].trim());
+                    //alert($(qArray[0]));
+                }
+            }
+        });
+    </script>
+	
+	<title>Fire Alarm System</title>
+</head>
+    <body>
+    <font size="50px;"><center>Building Survey Performa for Fire Safety Assessment</center></font><br />
+<!--
+    <form name="the_form" target="_blank" method="post" action="#">
+	<center><div style="width:800px;"> 
+	<table border="1" cellpadding="2" cellspacing="0" name="parta">
+	  <tr rowspan="2">
+	    <td colspan="5" height="20px;" class="header1" style="background-color:#e6e0e0;"><center><font size="5px;">Part A</font><br>&nbsp;</center></td>
+      </tr>
+      
+      <tr>
+	    <td class="col1" style="background-color:#7AFF33;">5.Height of building(m)</td>
+	    <td colspan="1" class="col2">
+          <input tabindex="5" type="number" name="hob" style="width:100%;" id="hob">
+	    </td>
+      <tr>    
+      <tr>
+	    <td class="col1" style="background-color:#7AFF33;">6.Open Space Width(m)</td>
+	    <td colspan="1" class="col2">
+          In Front: <input tabindex="6" type="number" name="infront" style="width:100%;" id="6a">
+	    </td>
+        <td colspan="1" class="col2">
+          On Left:<input tabindex="7" type="number" name="onleft" style="width:100%;" id="6b">
+	    </td>
+        <td colspan="1" class="col2">
+          On Right:<input tabindex="8" type="number" name="onright" style="width:100%;" id="6c">
+	    </td>
+        <td colspan="1" class="col2">
+          On Rear:<input tabindex="9" type="number" name="onrear" style="width:100%;" id="6d">
+	    </td>
+      <tr>     
+      <tr>
+	    <td class="col1" style="background-color:#7AFF33;">7.Main Street width in front of building(m)</td>
+	    <td colspan="1" class="col2">
+            <input tabindex="10" type="number" name="mswinfront" style="width:100%;" id="mswinfront">
+	    </td>
+      <tr> 
+      <tr>
+	    <td class="col1" style="background-color:#7AFF33;">8.Distance of main gate from main street(m)</td>
+	    <td colspan="1" class="col2">
+            <input tabindex="11" type="number" name="dogfms" style="width:100%;" id="dogfms">
+	    </td>
+      <tr> 
+      <tr>
+	    <td class="col1" style="background-color:#7AFF33;">9.Width of road from main street to building's main gate(m)</td>
+	    <td colspan="1" class="col2">
+            <input tabindex="12" type="number" name="worfmstomg" style="width:100%;">
+	    </td>
+      <tr> 
+      <tr>
+	    <td class="col1" style="background-color:#7AFF33;">10.Main Gate</td>
+	    <td colspan="2" class="col2">
+            Height(m)<input tabindex="13" type="number" name="mgheight" style="width:100%;" id="mgheight">
+	    </td>
+        <td colspan="2" class="col2">
+            Width(m)<input tabindex="14" type="number" name="mgwidth" style="width:100%;" id="mgwidth">
+	    </td>  
+      <tr>
+      <tr>
+	    <td class="col1" style="background-color:#7AFF33;">11.Corridors</td>
+	    <td colspan="2" class="col2">
+            Height(m)<input tabindex="15" type="number" name="cheight" style="width:100%;" id="cheight">
+	    </td>
+        <td colspan="2" class="col2">
+            Width(m)<input tabindex="16" type="number" name="cwidth" style="width:100%;" id="cwidth">
+	    </td>  
+      <tr>
+      <tr>
+	    <td class="col1" style="background-color:#7AFF33;">12.Staircase width on floor(m)</td>
+	    <td colspan="2" class="col2">
+            Individual<input tabindex="17" type="number" name="swindividual" style="width:100%;" id="swindividual">
+	    </td>
+        <td colspan="2" class="col2">
+            Total<input tabindex="18" type="number" name="sttotal" style="width:100%;" id="sttotal">
+	    </td>  
+      <tr>
+      <tr>
+	    <td class="col1" style="background-color:#7AFF33;">13.Maximum travel distance(m)</td>
+	    <td colspan="2" class="col2">
+            On Floor<input tabindex="19" type="number" name="mtdfloor" style="width:100%;" id="mtdfloor">
+	    </td>
+        <td colspan="2" class="col2">
+            In Basement<input tabindex="20" type="number" name="mtdbasement" style="width:100%;" id="mtdbasement">
+	    </td>  
+      <tr>
+      <tr>
+	    <td class="col1" style="background-color:#7AFF33;">14.Compartment Size(m<sup>2</sup>)</td>
+	    <td colspan="2" class="col2">
+            On Floor<input tabindex="21" type="number" name="csfloor" style="width:100%;" id="csfloor">
+	    </td>
+        <td colspan="2" class="col2">
+            In Basement<input tabindex="22" type="number" name="csbasement" style="width:100%;" id="csbasement">
+	    </td>  
+      <tr>
+      <tr>
+	    <td class="col1" style="background-color:#7AFF33;">15.Refugee area(m<sup>2</sup>)</td>
+	    <td colspan="1" class="col2">
+            <input tabindex="23" type="number" name="rarea" style="width:100%;" id="rarea">
+	    </td>
+      <tr>  
+      <tr>
+	    <td class="col1" style="background-color:#7AFF33;">16.Smoke ventilators area in basement per compartment(m<sup>2</sup>)</td>
+	    <td colspan="1" class="col2">
+            <input tabindex="24" type="number" name="sva" style="width:100%;">
+	    </td>
+      <tr>  
+      <tr>
+	    <td class="col1" style="background-color:#7AFF33;">17.Tank Capacity(litres)</td>
+	    <td colspan="2" class="col2">
+            Underground<input tabindex="25" type="number" name="tcunderground" style="width:100%;" id="tcunderground">
+	    </td>
+        <td colspan="2" class="col2">
+            Roof<input tabindex="26" type="number" name="tcroof" style="width:100%;" id="tcroof">
+	    </td>
+      <tr> 
+      <tr>
+	    <td class="col1" style="background-color:#7AFF33;">18.Ventilation of Building</td>
+        <td colspan="1" class="col2">
+            <select tabindex="27" name="ventiob" style="width:100%;">
+                <option selected name="A">Naturally Ventilated</option>
+                <option name="B">Centrally Air Conditioned</option>
+            </select>
+	    </td>
+      <tr> 
+      <tr>
+	    <td class="col1" style="background-color:#7AFF33;">19.Basement in building provided</td>
+        <td colspan="1" class="col2">
+            <select tabindex="28" name="bbp" style="width:100%;" id="bbp">
+                <option selected value="y">Yes</option>
+                <option value="n">No</option>
+            </select>
+	    </td>
+      <tr> 
+      <tr>
+	    <td class="col1" style="background-color:#7AFF33;">20.Area in Basement(m<sup>2</sup>)</td>
+        <td colspan="1" class="col2">
+            <input tabindex="29" type="number" name="areainbasement" style="width:100%;">
+	    </td>
+      <tr> 
+      <tr>
+	    <td class="col1" style="background-color:#7AFF33;">21.Type of Tower</td>
+        <td colspan="1" class="col2">
+            <select tabindex="30" name="typeoft" style="width:100%;">
+                <option selected name="normal">Normal Tower</option>
+                <option name="podium">Building on Podium</option>
+            </select>
+	    </td>
+      <tr> 
+      <tr>
+	    <td class="col1" style="background-color:#7AFF33;">22.Turning Radii at Bends of Open Space</td>
+	    <td colspan="1" class="col2">
+          In Front: <input tabindex="31" type="number" name="radiiinfront" style="width:100%;" id="22a">
+	    </td>
+        <td colspan="1" class="col2">
+          On Left:<input tabindex="32" type="number" name="radiionleft" style="width:100%;" id="22b">
+	    </td>
+        <td colspan="1" class="col2">
+          On Right:<input tabindex="33" type="number" name="radiionright" style="width:100%;" id="22c">
+	    </td>
+        <td colspan="1" class="col2">
+          On Rear:<input tabindex="34" type="number" name="radiionrear" style="width:100%;" id="22d">
+	    </td>
+      <tr>  
+      <tr>
+	    <td class="col1" style="background-color:#7AFF33;">23.Occupany Load</td>
+        <td colspan="2" class="col2">
+            On Floors<input tabindex="35" type="number" name="occupancyloadonf" style="width:100%;" id="occupancyloadonf">
+	    </td>
+        <td colspan="2" class="col2">
+            In Basement<input tabindex="36" type="number" name="occupancyloadinb" style="width:100%;" id="occupancyloadinb">
+	    </td>  
+      <tr> 
+      <tr>
+	    <td class="col1" style="background-color:#7AFF33;">24.Sprinklers on Floors provided</td>
+        <td colspan="1" class="col2">
+            <select tabindex="37" name="Sprinklerfloor" style="width:100%;" id="Sprinklerfloor">
+                <option selected value="sfy">Yes</option>
+                <option value="sfn">No</option>
+            </select>
+	    </td>
+      <tr>
+      <tr>
+	    <td class="col1" style="background-color:#7AFF33;">25.Sprinklers on Basement provided</td>
+        <td colspan="1" class="col2">
+            <select tabindex="38" name="Sprinklerbasement" style="width:100%;" id="Sprinklerbasement">
+                <option selected value="sby">Yes</option>
+                <option value="sbn">No</option>
+            </select>
+	    </td>
+      <tr> 
+      <tr>
+	    <td class="col1" style="background-color:#7AFF33;">26.Dead-End distance on floors</td>
+        <td colspan="1" class="col2">
+            <input tabindex="39" type="number" name="deadend" style="width:100%;" id="deadend">
+	    </td>
+      <tr>     
+            
+	</table>
+        </div>
+        <button style="margin-top:10px;" onclick="Fill_Data(); return false;">Submit</button>
+        </center>
+        </form>
+-->
+        
+    
+        
+    <form name="the_form" target="_blank" method="post" action="#">
+    <!-- Part B Section A-->
+        
+	<center><div style="width:1200px; margin-top:20px;" id="divPartB"> 
+	<table border="1" cellpadding="2" cellspacing="0" name="partb">
+        <tr>
+	    <td class="col1" style="background-color:#e6e0e0;">1.Date of Survey</td>
+	    <td colspan="5" class="col2">
+          <input tabindex="1" type="date" name="dos" style="width:100%;">
+	    </td>
+      <tr>
+      <tr>
+	    <td class="col1" style="background-color:#e6e0e0;">2.Name of Surveyors with Designations</td>
+	    <td colspan="5" class="col2">
+          <input tabindex="2" type="text" name="nos" style="width:100%;">
+	    </td>
+      <tr>  
+      <tr>
+	    <td class="col1" style="background-color:#e6e0e0;">3.Name of buildings</td>
+	    <td colspan="5" class="col2">
+          <input tabindex="3" type="text" name="nob" id="nob" style="width:100%;">
+	    </td>
+      <tr>
+      <tr>
+	    <td class="col1" style="background-color:#e6e0e0;">4.Classification Of Buildings</td>
+	    <td colspan="5" class="col2">
+            <select tabindex="4" name="classob" style="width:100%;" id="classob">
+                <option selected value="A4">A4 : Residential Appartments</option>
+                <option value="A5">A5 : Hotel</option>
+            </select>
+	    </td>
+      <tr>        
+        <tr>
+          <td  colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;"><b>Module Name</b></td> 
+          <td colspan="1" class="col3">Weight</td>
+               <td  colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;"><b>Module Name</b></td> 
+          <td colspan="3" class="col3">Weight</td>
+              
+      <tr>
+        <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px; ">A<sub>1</sub></td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optiona1w" id="optiona1now" style="width:100%;">
+               <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px; ">C<sub>3</sub></td> 
+           <td colspan="3" class="col1"> <input type="text" name="optionc3w" id="optionc3now" style="width:100%;">
+	    </td>
+            </tr>
+        <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px; ">A<sub>2</sub></td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optiona2w" id="optiona2now" style="width:100%;">
+               <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px; ">C<sub>4</sub></td> 
+           <td colspan="3" class="col1"> <input type="text" name="optionc4w" id="optionc4now" style="width:100%;">
+	    </td>
+            </tr>
+        <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px; ">A<sub>3</sub></td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optiona3w" id="optiona3now" style="width:100%;">
+               <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px; ">C<sub></sub></td> 
+           <td colspan="3" class="col1"> <input type="text" name="optioncw" id="optioncnow" style="width:100%;">
+	    </td>
+            </tr>
+        <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px; ">A<sub></sub></td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionaw" id="optionanow" style="width:100%;">
+               <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px; ">D<sub>1</sub></td> 
+           <td colspan="3" class="col1"> <input type="text" name="optiond1w" id="optiond1now" style="width:100%;">
+	    </td>
+            </tr>
+        <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px; ">B<sub>1</sub></td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionb1w" id="optionb1now" style="width:100%;">
+               <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px; ">D<sub>2</sub></td> 
+           <td colspan="3" class="col1"> <input type="text" name="optiond2w" id="optiond2now" style="width:100%;">
+	    </td>
+            </tr>
+        <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px; ">B<sub>2</sub></td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionb2w" id="optionb2now" style="width:100%;">
+               <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px; ">D<sub>3</sub></td> 
+           <td colspan="3" class="col1"> <input type="text" name="optiond3w" id="optiond3now" style="width:100%;">
+	    </td>
+            </tr>
+        <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px; ">B<sub>3</sub></td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionb3w" id="optionb3now" style="width:100%;">
+               <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px; ">D<sub>4</sub></td> 
+           <td colspan="3" class="col1"> <input type="text" name="optiond4w" id="optiond4now" style="width:100%;">
+	    </td>
+            </tr>
+        <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px; ">B<sub>4</sub></td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionb4w" id="optionb4now" style="width:100%;">
+               <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px; ">D<sub>5</sub></td> 
+           <td colspan="3" class="col1"> <input type="text" name="optiond5w" id="optiond5now" style="width:100%;">
+	    </td>
+            </tr>
+        <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px; ">B<sub>5</sub></td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionb5w" id="optionb5now" style="width:100%;">
+               <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px; ">D<sub></sub></td> 
+           <td colspan="3" class="col1"> <input type="text" name="optiondw" id="optiondnow" style="width:100%;">
+	    </td>
+            </tr>
+        <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px; ">B<sub>6</sub></td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionb6w" id="optionb6now" style="width:100%;">
+               <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px; ">E<sub>1</sub></td> 
+           <td colspan="3" class="col1"> <input type="text" name="optione1w" id="optione1now" style="width:100%;">
+	    </td>
+            </tr>
+        <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px; ">B<sub></sub></td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionbw" id="optionbnow" style="width:100%;">
+               <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px; ">E<sub>2</sub></td> 
+           <td colspan="3" class="col1"> <input type="text" name="optione2w" id="optione2now" style="width:100%;">
+	    </td>
+            </tr>
+        <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px; ">C<sub>1</sub></td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionc1w" id="optionc1now" style="width:100%;">
+               <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px; ">E<sub>3</sub></td> 
+           <td colspan="3" class="col1"> <input type="text" name="optione3w" id="optione3now" style="width:100%;">
+	    </td>
+            </tr>
+        <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px; ">C<sub>2</sub></td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionc2w" id="optionc2now" style="width:100%;">
+               <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px; ">E<sub></sub></td> 
+           <td colspan="3" class="col1"> <input type="text" name="optionew" id="optionenow" style="width:100%;">
+	    </td>
+            </tr>
+        
+        
+        
+        <tr>
+      <td colspan="6" class="col1" style="background-color:#e6e0e0;"><b style="font-size:20px;">Please click on your observation about the availability of mesaurable items in the following questions in column as Yes/No.</b></td>
+      <tr>
+      <tr>
+	    <td colspan="6" class="col1" style="background-color:#e6e0e0;"><b style="font-size:18px;">Fire Safety Stratergy A : Mean of Access</b></td>
+      <tr>  
+      <tr>
+          <td  colspan="3" class="col1" style="background-color:#e6e0e0; font-size:18px;"><b>The following measurable items (A<sub>11</sub> to A<sub>14</sub>) of criteria "A<sub>1</sub>: Open space around building" are available in the building.</b></td>
+        <td colspan="1" class="col2">Yes</td>
+        <td colspan="1" class="col3">No</td>  
+          <td colspan="1" class="col4">Weight</td>
+      <tr>
+          
+      <tr>
+	    <td colspan="3" class="col1" style="background-color:#e6e0e0; font-size:18px;">Sufficient parking free open space with minimum required hard drive width available:</td>
+	    <td colspan="1" class="col2">
+	    </td>
+          <td colspan="1" class="col3">
+	    </td>
+          <td colspan="1" class="col4">
+	    </td>
+      <tr>   
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px; ">A<sub>11</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">In front of building (including street width) </td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="3" name="optiona11" id="optiona11yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="4" name="optiona11" id="optiona11no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optiona11w" id="optiona11now" style="width:45px;">
+	    </td>
+      <tr> 
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">A<sub>12</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">On left side of building</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="5" name="optiona12" id="optiona12yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="6" name="optiona12" id="optiona12no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optiona12w" id="optiona12now" style="width:45px;">
+	    </td>
+      <tr> 
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">A<sub>13</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">On right side of building</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="7" name="optiona13" id="optiona13yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="8" name="optiona13" id="optiona13no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optiona13w" id="optiona13now" style="width:45px;">
+	    </td>
+      <tr> 
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">A<sub>14</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">On rear side of building</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="9" name="optiona14" id="optiona14yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="10" name="optiona14" id="optiona14no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optiona14w" id="optiona14now" style="width:45px;">
+	    </td>
+      <tr> 
+      <tr></div>
+	    <td  colspan="3" class="col1" style="background-color:#e6e0e0; font-size:18px;"><b>The following measurable items (A<sub>21</sub> to A<sub>25</sub>) of criteria "A<sub>2</sub>: Open space around building" are available in the building.</b></td>
+        <td colspan="1" class="col2">Yes</td>
+        <td colspan="1" class="col3">No</td>  
+        <td colspan="1" class="col4">Weight</td> 
+      <tr>       
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">A<sub>21</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Height of building is restricted for main road width requirement</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="11" name="optiona21" id="optiona21yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="12" name="optiona21" id="optiona21no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optiona21w" id="optiona21now" style="width:45px;">
+	    </td>
+      <tr> 
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">A<sub>22</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Minimum width of main road in front of building is more than requirement</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="13" name="optiona22" id="optiona22yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="14" name="optiona22" id="optiona22no">
+	    </td>
+           <td colspan="1" class="col5">
+            <input type="text" name="optiona22w" id="optiona22now" style="width:45px;">
+	    </td>
+      <tr>
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">A<sub>23</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Main road in front of building meets the other road of equal or more width, without a dead end</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="15" name="optiona23" id="optiona23yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="16" name="optiona23" id="optiona23no">
+	    </td>
+           <td colspan="1" class="col5">
+            <input type="text" name="optiona23w" id="optiona23now" style="width:45px;">
+	    </td>
+      <tr>  
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">A<sub>24</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Sufficient clear distance(minimum 6 meter) of road from main road to building available</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="17" name="optiona24" id="optiona24yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="18" name="optiona24" id="optiona24no">
+	    </td>
+           <td colspan="1" class="col5">
+            <input type="text" name="optiona24w" id="optiona24now" style="width:45px;">
+	    </td>
+      <tr>
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">A<sub>25</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Minimum clear height and width of main gate of the buiding are 4.5 and 6/0 meters respectively</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="19" name="optiona25" id="optiona25yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="20" name="optiona25" id="optiona25no">
+	    </td>
+           <td colspan="1" class="col5">
+            <input type="text" name="optiona25w" id="optiona25now" style="width:45px;">
+	    </td>
+      <tr> 
+      <tr>
+	    <td  colspan="3" class="col1" style="background-color:#e6e0e0; font-size:18px;"><b>The following measurable items (A<sub>31</sub> to A<sub>34</sub>) of criteria "A<sub>3</sub>: Access inside building i.e. Fire Shaft/Lift" are available in the building.</b></td>
+        <td colspan="1" class="col2">Yes</td>
+        <td colspan="1" class="col3">No</td>  
+          <td colspan="1" class="col4">Weight</td>  
+      <tr>       
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">A<sub>31</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Fire Fighting shaft with fire protected lobby, fire lift anf staircase provided</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="21" name="optiona31" id="optiona31yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="22" name="optiona31" id="optiona31no">
+	    </td>
+           <td colspan="1" class="col5">
+            <input type="text" name="optiona31w" id="optiona31now" style="width:45px;">
+	    </td>
+      <tr> 
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">A<sub>32</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Firefighting shaft is either a pressuirized 120 minutes fire rated enclosure with 120 minutes fire rated door or open naturally ventilated</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="23" name="optiona32" id="optiona32yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="24" name="optiona32" id="optiona32no">
+	    </td>
+           <td colspan="1" class="col5">
+            <input type="text" name="optiona32w" id="optiona32now" style="width:45px;">
+	    </td>
+      <tr>
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">A<sub>33</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Firefighting shaft is equipped with floor plan,firemen talk back, wet riser and landing valve in its lobby</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="25" name="optiona33" id="optiona33yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="26" name="optiona33" id="optiona33no">
+	    </td>
+           <td colspan="1" class="col5">
+            <input type="text" name="optiona33w" id="optiona33now" style="width:45px;">
+	    </td>
+      <tr>  
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">A<sub>34</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">The words 'Fire Lift' is clearly displayed in fluoroscent paint on each lift landing door.</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="27" name="optiona34" id="optiona34yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="28" name="optiona34" id="optiona34no">
+	    </td>
+           <td colspan="1" class="col5">
+            <input type="text" name="optiona34w" id="optiona34now" style="width:45px;">
+	    </td>
+      <tr>
+    <!-- Part B Section B -->
+      <tr>
+	    <td colspan="6" class="col1" style="background-color:#e6e0e0; font-size:18px;"><b style="font-size:18px;">Fire Safety Stratergy B : Means of Egress</b></td>
+      <tr>      
+      <tr>
+	    <td  colspan="3" class="col1" style="background-color:#e6e0e0; font-size:18px;"><b>The following measurable items (B<sub>11</sub> to B<sub>14</sub>) of criteria "B<sub>1</sub>: Vertical Movement Routes" are available in the building.</b></td>
+        <td colspan="1" class="col2">Yes</td>
+        <td colspan="1" class="col3">No</td>  
+          <td colspan="1" class="col4">Weight</td> 
+      <tr>       
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">B<sub>11</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">The minimum two number of exit routes (means of escape as staircaswe, ramps, horizontal exits, fire shaft) from every point of a floor or a compartment to an exit route/safe place available</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="29" name="optionb11" id="optionb11yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="30" name="optionb11" id="optionb11no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionb11w" id="optionb11now" style="width:45px;">
+	    </td>
+          
+      <tr> 
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">B<sub>12</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">The minimum two number of exit routes (means of escape) from every point of basement compartment to an exit route/safe place available</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="31" name="optionb12" id="optionb12yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="32" name="optionb12" id="optionb12no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionb12w" id="optionb12now" style="width:45px;">
+	    </td>
+      <tr>
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">B<sub>13</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Sufficient exit capacity for occupancy load on floors provided</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="33" name="optionb13" id="optionb13yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="34" name="optionb13" id="optionb13no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionb13w" id="optionb13now" style="width:45px;">
+	    </td>
+      <tr>  
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">B<sub>14</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Sufficient exit capacity for occupancy load from basement provided</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="35" name="optionb14" id="optionb14yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="36" name="optionb14" id="optionb14no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionb14w" id="optionb14now" style="width:45px;">
+	    </td>
+      <tr>
+      <tr>
+	    <td  colspan="3" class="col1" style="background-color:#e6e0e0; font-size:18px;"><b>The following measurable items (B<sub>21</sub> to B<sub>26</sub>) of criteria "B<sub>2</sub>: Exit features" are available in the building.</b></td>
+        <td colspan="1" class="col2">Yes</td>
+        <td colspan="1" class="col3">No</td>
+          <td colspan="1" class="col4">Weight</td>  
+      <tr>       
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">B<sub>21</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Main inteval staircase is located along external wall of building and away from lift well</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="37" name="optionb21" id="optionb21yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="38" name="optionb21" id="optionb21no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionb21w" id="optionb21now" style="width:45px;">
+	    </td>
+      <tr> 
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">B<sub>22</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">All staircases are continuous from terrace to exit discharge level or ground floor</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="39" name="optionb22" id="optionb22yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="40" name="optionb22" id="optionb22no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionb22w" id="optionb22now" style="width:45px;">
+	    </td>
+      <tr>
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">B<sub>23</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Seperate staircase for basement away from main staircase protected with fire rated door</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="41" name="optionb23" id="optionb23yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="42" name="optionb23" id="optionb23no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionb23w" id="optionb23now" style="width:45px;">
+	    </td>
+      <tr>  
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">B<sub>24</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">At least 50% of exit routes are directly discharging to the exterior of building or to exit passageway</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="43" name="optionb24" id="optionb24yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="44" name="optionb24" id="optionb24no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionb24w" id="optionb24now" style="width:45px;">
+	    </td>
+      <tr>
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">B<sub>25</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">The minimum width for exit doors provided</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="45" name="optionb25" id="optionb25yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="46" name="optionb25" id="optionb25no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionb25w" id="optionb25now" style="width:45px;">
+	    </td>
+      <tr>  
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">B<sub>26</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Sufficient width and minimum 2.4m height of exit corridors in the directions of travel to exit routes provided</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="47" name="optionb26" id="optionb26yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="48" name="optionb26" id="optionb26no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionb26w" id="optionb26now" style="width:45px;">
+	    </td>
+      <tr>  
+      <tr>
+	    <td  colspan="3" class="col1" style="background-color:#e6e0e0; font-size:18px;"><b>The following measurable items (B<sub>31</sub> to B<sub>36</sub>) of criteria "B<sub>3</sub>: Travel Distances" are available in the building.</b></td>
+        <td colspan="1" class="col2">Yes</td>
+        <td colspan="1" class="col3">No</td>
+          <td colspan="1" class="col4">Weight</td>  
+      <tr>       
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">B<sub>31</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Maximum Travel Distance (MTD) is restricted on floors as per requirements</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="49" name="optionb31" id="optionb31yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="50" name="optionb31" id="optionb31no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionb31w" id="optionb31now" style="width:45px;">
+	    </td>
+      <tr> 
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">B<sub>32</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Maximum Travel Distance (MTD) restricted in basement as per requirements</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="51" name="optionb32" id="optionb32yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="52" name="optionb32" id="optionb32no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionb32w" id="optionb32now" style="width:45px;">
+	    </td>
+      <tr>
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">B<sub>33</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">The maximum dead-end distance on a floor is less than 15m</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="53" name="optionb33" id="optionb33yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="54" name="optionb33" id="optionb33no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionb33w" id="optionb33now" style="width:45px;">
+	    </td>
+      <tr> 
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">B<sub>34</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">The exit routes are located far way from each other</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="55" name="optionb34" id="optionb34yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="56" name="optionb34" id="optionb34no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionb34w" id="optionb34now" style="width:45px;">
+	    </td>
+      <tr> 
+       
+      <tr>
+	    <td  colspan="3" class="col1" style="background-color:#e6e0e0; font-size:18px;"><b>The following measurable items (B<sub>41</sub> to B<sub>43</sub>) of criteria "B<sub>4</sub>: Horizontal exit and refuge area" are available in the building.</b></td>
+        <td colspan="1" class="col2">Yes</td>
+        <td colspan="1" class="col3">No</td>  
+          <td colspan="1" class="col4">Weight</td>  
+      <tr>       
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">B<sub>41</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Horizontal exits provided as per requirements</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="57" name="optionb41" id="optionb41yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="58" name="optionb41" id="optionb41no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionb41w" id="optionb41now" style="width:45px;">
+	    </td>
+      <tr> 
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">B<sub>42</sub></td>
+          <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Sufficient refuge area is provided as per requirements</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="59" name="optionb42" id="optionb42yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="60" name="optionb42" id="optionb42no">
+	    </td> <td colspan="1" class="col5">
+            <input type="text" name="optionb42w" id="optionb42now" style="width:45px;">
+	    </td>
+      <tr>
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">B<sub>43</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Refuge area is open ventilated, sprinkled and provided with fireman talkback or public-address system</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="61" name="optionb43" id="optionb43yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="62" name="optionb43" id="optionb43no">
+	    </td>
+           <td colspan="1" class="col5">
+            <input type="text" name="optionb43w" id="optionb43now" style="width:45px;">
+	    </td>
+      <tr>  
+     
+      <tr>
+	    <td  colspan="3" class="col1" style="background-color:#e6e0e0; font-size:18px;"><b>The following measurable items (B<sub>51</sub> to B<sub>54</sub>) of criteria "B<sub>5</sub>: Emergency Power and escape lighting" are available in the building.</b></td>
+        <td colspan="1" class="col2">Yes</td>
+        <td colspan="1" class="col3">No</td>  
+          <td colspan="1" class="col4">Weight</td>
+      <tr>       
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">B<sub>51</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Emergency power other than main supply, supported by standby diesel generator is available</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="63" name="optionb51" id="optionb51yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="64" name="optionb51" id="optionb51no">
+	    </td>
+           <td colspan="1" class="col5">
+            <input type="text" name="optionb51w" id="optionb51now" style="width:45px;">
+	    </td>
+      <tr> 
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">B<sub>52</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Emergency power is supporting all critical life safety systems like; emergency lighting, fire man's lift, fire pump, pressuriztion, smoke ventilation, fire alarm etc</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="65" name="optionb52" id="optionb52yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="66" name="optionb52" id="optionb52no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionb52w" id="optionb52now" style="width:45px;">
+	    </td>
+      <tr>
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">B<sub>53</sub></td>
+          <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Emergency light provide adequate illumination along exit routes and corridors</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="67" name="optionb53" id="optionb53yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="68" name="optionb53" id="optionb53no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionb53w" id="optionb53now" style="width:45px;">
+	    </td>
+      <tr> 
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">B<sub>54</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Escape light luminaries are located at all intersection of corridors, change of direction, exit doors, near each fire alarm call points and firefighting installations</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="69" name="optionb54" id="optionb54yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="70" name="optionb54" id="optionb54no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionb54w" id="optionb54now" style="width:45px;">
+          </td>
+      <tr>      
+      <tr>
+	    <td  colspan="3" class="col1" style="background-color:#e6e0e0; font-size:18px;"><b>The following measurable items (B<sub>61</sub> to B<sub>64</sub>) of criteria "B<sub>6</sub>: Exit Signs" are available in the building.</b></td>
+        <td colspan="1" class="col2">Yes</td>
+        <td colspan="1" class="col3">No</td>  
+          <td colspan="1" class="col4">Weight</td> 
+      <tr>       
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">B<sub>61</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Exit signs are well illuminated adn wired on an independent power supply other than main circuit</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="71" name="optionb61" id="optionb61yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="72" name="optionb61" id="optionb61no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionb61w" id="optionb61now" style="width:45px;">
+	    </td>
+      <tr> 
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">B<sub>62</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Exit signs are damage proof and flushed inside the wall</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="73" name="optionb62" id="optionb62yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="74" name="optionb62" id="optionb62no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionb62w" id="optionb62now" style="width:45px;">
+	    </td>
+      <tr>
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">B<sub>63</sub></td>
+          <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Exit signs are clearly visible with indicating arrows to escape routes (Exits)</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="75" name="optionb63" id="optionb63yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="76" name="optionb63" id="optionb63no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionb63w" id="optionb63now" style="width:45px;">
+	    </td>
+      <tr> 
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">B<sub>64</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Individual floors are prominently indicated on the wall facing the staircase</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="77" name="optionb64" id="optionb64yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="78" name="optionb64" id="optionb64no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionb64w" id="optionb64now" style="width:45px;">
+	    </td>
+      <tr> 
+          
+    <!-- Part B Section C -->
+      <tr>
+	    <td colspan="6" class="col1" style="background-color:#e6e0e0; font-size:18px;"><b style="font-size:18px;">Fire Safety Stratergy C : Passive Fire Safety</b></td>
+      <tr>      
+      <tr>
+	    <td  colspan="3" class="col1" style="background-color:#e6e0e0; font-size:18px;"><b>The following measurable items (C<sub>11</sub> to C<sub>14</sub>) of criteria "C<sub>1</sub>: Type of construction" are available in the building.</b></td>
+        <td colspan="1" class="col2">Yes</td>
+        <td colspan="1" class="col3">No</td>  
+          <td colspan="1" class="col4">Weight</td>
+      <tr>       
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">C<sub>11</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">All structural laod bearing members (beam, column, floor, roof) are of type 1 or 2 constructions</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="79" name="optionc11" id="optionc11yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="80" name="optionc11" id="optionc11no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionc11w" id="optionc11now" style="width:45px;">
+	    </td>
+      <tr> 
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">C<sub>12</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">All interior surface material of the building is of class 1 or 2 fire spread rating</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="81" name="optionc12" id="optionc12yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="82" name="optionc12" id="optionc12no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionc12w" id="optionc12now" style="width:45px;">
+	    </td>
+      <tr>
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">C<sub>13</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">All exterior surface material of the building is of class 1 or 2 fire spread rating</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="83" name="optionc13" id="optionc13yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="84" name="optionc13" id="optionc13no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionc13w" id="optionc13now" style="width:45px;">
+	    </td>
+      <tr>  
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">C<sub>14</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Exterior/Interior surface material of building do not generate toxic frames</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="85" name="optionc14" id="optionc14yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="86" name="optionc14" id="optionc14no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionc14w" id="optionc14now" style="width:45px;">
+	    </td>
+      <tr>      
+      <tr>
+	    <td  colspan="3" class="col1" style="background-color:#e6e0e0; font-size:18px;"><b>The following measurable items (C<sub>21</sub> to C<sub>24</sub>) of criteria "C<sub>2</sub>: Compartmentalization" are available in the building.</b></td>
+        <td colspan="1" class="col2">Yes</td>
+        <td colspan="1" class="col3">No</td>
+        <td colspan="1" class="col4">Weight</td> 
+      <tr>       
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">C<sub>21</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">On floor compartment size is restricted as per requirements<sup>2</sup></td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="87" name="optionc21" id="optionc21yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="88" name="optionc21" id="optionc21no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionc21w" id="optionc21now" style="width:45px;">
+	    </td>
+      <tr> 
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">C<sub>22</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">In basements compartment size is restricted as per requirements</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="89" name="optionc22" id="optionc22yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="90" name="optionc22" id="optionc22no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionc22w" id="optionc22now" style="width:45px;">
+	    </td>
+      <tr>
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">C<sub>23</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Compartment barrier walls are 120 minutes fire rated</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="91" name="optionc23" id="optionc23yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="92" name="optionc23" id="optionc23no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionc23w" id="optionc23now" style="width:45px;">
+	    </td>
+      <tr>  
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">C<sub>24</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Openings size in compartment barrier are restricted as per requirements</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="93" name="optionc24" id="optionc24yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="94" name="optionc24" id="optionc24no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionc24w" id="optionc24now" style="width:45px;">
+	    </td>
+      <tr>
+            
+      <tr>
+	    <td  colspan="3" class="col1" style="background-color:#e6e0e0; font-size:18px;"><b>The following measurable items (C<sub>31</sub> to C<sub>34</sub>) of criteria "C<sub>3</sub>: Fire and smoke protection of openings" are available in the building.</b></td>
+        <td colspan="1" class="col2">Yes</td>
+        <td colspan="1" class="col3">No</td>  
+          <td colspan="1" class="col4">Weight</td> 
+      <tr>       
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">C<sub>31</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">All cable ducts and sealing fire stops are of 120 minutes fire rated material</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="95" name="optionc31" id="optionc31yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="96" name="optionc31" id="optionc31no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionc31w" id="optionc31now" style="width:45px;">
+	    </td>
+      <tr> 
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">C<sub>32</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">All vertical and staircase openings between floors are enclosed or protected by 120 minutes fire rated enclosure and naturally ventilated</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="97" name="optionc32" id="optionc32yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="98" name="optionc32" id="optionc32no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionc32w" id="optionc32now" style="width:45px;">
+	    </td>
+      <tr>
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">C<sub>33</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">All wall openings and service ducts closed with 120 minutes fire rated doors</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="99" name="optionc33" id="optionc33yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="100" name="optionc33" id="optionc33no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionc33w" id="optionc33now" style="width:45px;">
+	    </td>
+      <tr>  
+      
+            
+      <tr>
+	    <td  colspan="3" class="col1" style="background-color:#e6e0e0; font-size:18px;"><b>The following measurable items (C<sub>41</sub> to C<sub>43</sub>) of criteria "C<sub>4</sub>: Fire protection of service installions" are available in the building.</b></td>
+        <td colspan="1" class="col2">Yes</td>
+        <td colspan="1" class="col3">No</td>
+          <td colspan="1" class="col4">Weight</td>  
+      <tr>       
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">C<sub>41</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Seperate ducts for electrical cables and other services provided</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="101" name="optionc41" id="optionc41yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="102" name="optionc41" id="optionc41no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionc41w" id="optionc41now" style="width:45px;">
+	    </td>
+      <tr> 
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">C<sub>42</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Gas supply pipe lines are laid in seperate duct located at external wall of the building</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="103" name="optionc42" id="optionc42yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="104" name="optionc42" id="optionc42no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionc42w" id="optionc42now" style="width:45px;">
+	    </td>
+      <tr>
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">C<sub>43</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">All rooms containing high pressure boilers, refrigerating machinery, transformers located away from exits, and protected with fire rated walls with adequate vents</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="105" name="optionc43" id="optionc43yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="106" name="optionc43" id="optionc43no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optionc43w" id="optionc43now" style="width:45px;">
+	    </td>
+      <tr>  
+          
+          <!-- Part B Section D -->
+      <tr>
+	    <td colspan="6" class="col1" style="background-color:#e6e0e0; font-size:18px;"><b style="font-size:18px;">Fire Safety Stratergy D : Active Fire Safety</b></td>
+      <tr>      
+      <tr>
+	    <td  colspan="3" class="col1" style="background-color:#e6e0e0; font-size:18px;"><b>The following measurable items (D<sub>11</sub> to D<sub>12</sub>) of criteria "D<sub>1</sub>: Fire and smoke detection" are available in the building.</b></td>
+        <td colspan="1" class="col2">Yes</td>
+        <td colspan="1" class="col3">No</td>  
+          <td colspan="1" class="col4">Weight</td>
+      <tr>       
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">D<sub>11</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">A fire detection and alarm system installed in the building</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="107" name="optiond11" id="optiond11yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="108" name="optiond11" id="optiond11no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optiond11w" id="optiond11now" style="width:45px;">
+	    </td>
+      <tr> 
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">D<sub>12</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Fire detection and alarm system is automatic and connected to sprinklers</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="109" name="optiond12" id="optiond12yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="110" name="optiond12" id="optiond12no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optiond12w" id="optiond12now" style="width:45px;">
+	    </td>
+      <tr>
+      <tr>
+	    <td  colspan="3" class="col1" style="background-color:#e6e0e0; font-size:18px;"><b>The following measurable items (D<sub>21</sub> to D<sub>25</sub>) of criteria "D<sub>2</sub>: Smoke venting and control" are available in the building.</b></td>
+        <td colspan="1" class="col2">Yes</td>
+        <td colspan="1" class="col3">No</td>
+          <td colspan="1" class="col4">Weight</td>
+      <tr>       
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">D<sub>21</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">All exit passages and corridor are either pressurized or have mechanical smoke exhaust system or naturally ventilated</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="111" name="optiond21" id="optiond21yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="112" name="optiond21" id="optiond21no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optiond21w" id="optiond21now" style="width:45px;">
+	    </td>
+      <tr> 
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">D<sub>22</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Sufficient power operated or natural smoke venting (more than 2.5% of floor area) provided in the basements</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="113" name="optiond22" id="optiond22yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="114" name="optiond22" id="optiond22no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optiond22w" id="optiond22now" style="width:45px;">
+	    </td>
+      <tr>
+          <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">D<sub>23</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Staircase enclosures are either pressurized or naturally ventilated</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="115" name="optiond23" id="optiond23yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="116" name="optiond23" id="optiond23no">
+	    </td>
+              <td colspan="1" class="col5">
+            <input type="text" name="optiond23w" id="optiond23now" style="width:45px;">
+	    </td>
+      <tr> 
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">D<sub>24</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">In AC buildings, independent Air Handling Unit (AHU) for each floor with automatic fire dampers provided in ducts</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="117" name="optiond24" id="optiond24yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="118" name="optiond24" id="optiond24no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optiond24w" id="optiond24now" style="width:45px;">
+	    </td>
+      <tr>
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">D<sub>25</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">In AC buildings, the corridors and exit routes have no air-conditioning(AC) vents, return air passage or any duct openings</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="119" name="optiond25" id="optiond25yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="120" name="optiond25" id="optiond25no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optiond25w" id="optiond25now" style="width:45px;">
+	    </td>
+      <tr>
+      <tr>
+	    <td  colspan="3" class="col1" style="background-color:#e6e0e0; font-size:18px;"><b>The following measurable items (D<sub>31</sub> to D<sub>34</sub>) of criteria "D<sub>3</sub>: Firefighting installations (FI)" are available in the building.</b></td>
+        <td colspan="1" class="col2">Yes</td>
+        <td colspan="1" class="col3">No</td>
+          <td colspan="1" class="col4">Weight</td>  
+      <tr>       
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">D<sub>31</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Sufficient portable fire extinguishersper floor or compartment provided</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="121" name="optiond31" id="optiond31yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="122" name="optiond31" id="optiond31no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optiond31w" id="optiond31now" style="width:45px;">
+	    </td>
+      <tr> 
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">D<sub>32</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Hose reel of sufficient length to cover all places on floors provided</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="123" name="optiond32" id="optiond32yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="124" name="optiond32" id="optiond32no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optiond32w" id="optiond32now" style="width:45px;">
+	    </td>
+          
+      <tr>
+          <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">D<sub>33</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Wet Riser or Down Comer provided as per requirement</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="125" name="optiond33" id="optiond33yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="126" name="optiond33" id="optiond33no">
+	    </td>
+              <td colspan="1" class="col5">
+            <input type="text" name="optiond33w" id="optiond33now" style="width:45px;">
+	    </td>
+      <tr> 
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">D<sub>34</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Yard hydrant provided</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="127" name="optiond34" id="optiond34yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="128" name="optiond34" id="optiond34no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optiond34w" id="optiond34now" style="width:45px;">
+          </td>
+      <tr>
+      
+      <tr>
+	    <td  colspan="3" class="col1" style="background-color:#e6e0e0; font-size:18px;"><b>The following measurable items (D<sub>41</sub> to D<sub>43</sub>) of criteria "D<sub>4</sub>: Sprinklers" are available in the building.</b></td>
+        <td colspan="1" class="col2">Yes</td>
+        <td colspan="1" class="col3">No</td>
+          <td colspan="1" class="col4">Weight</td> 
+      <tr>       
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">D<sub>41</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Sprinklers provided on the floor</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="129" name="optiond41" id="optiond41yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="130" name="optiond41" id="optiond41no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optiond41w" id="optiond41now" style="width:45px;">
+	    </td>
+      <tr> 
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">D<sub>42</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Sprinklers provided in the exit ways and lobbies</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="131" name="optiond42" id="optiond42yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="132" name="optiond42" id="optiond42no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optiond42w" id="optiond42now" style="width:45px;">
+	    </td>
+      <tr>
+          <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">D<sub>43</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Sprinklers provided in the basement</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="133" name="optiond43" id="optiond43yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="134" name="optiond43" id="optiond43no">
+	    </td>
+              <td colspan="1" class="col5">
+            <input type="text" name="optiond43w" id="optiond43now" style="width:45px;">
+	    </td>
+      <tr>
+          
+      
+      <tr>
+	    <td  colspan="3" class="col1" style="background-color:#e6e0e0; font-size:18px;"><b>The following measurable items (D<sub>51</sub> to D<sub>53</sub>) of criteria "D<sub>5</sub>: Water Supply" are available in the building.</b></td>
+        <td colspan="1" class="col2">Yes</td>
+        <td colspan="1" class="col3">No</td>  
+          <td colspan="1" class="col4">Weight</td>
+      <tr>       
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">D<sub>51</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Underground water tank of sufficient capacity provided</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="135" name="optiond51" id="optiond51yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="136" name="optiond51" id="optiond51no">
+	    </td>
+           <td colspan="1" class="col5">
+            <input type="text" name="optiond51w" id="optiond51now" style="width:45px;">
+	    </td>
+      <tr> 
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">D<sub>52</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Terrace water tank of sufficient capacity is provided</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="137" name="optiond52" id="optiond52yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="138" name="optiond52" id="optiond52no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optiond52w" id="optiond52now" style="width:45px;">
+	    </td>
+      <tr>
+          <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">D<sub>53</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">A pump house is 120 minutes fire rated enclosure with standby diesel generator provided</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="139" name="optiond53" id="optiond53yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="140" name="optiond53" id="optiond53no">
+	    </td>
+              <td colspan="1" class="col5">
+            <input type="text" name="optiond53w" id="optiond53now" style="width:45px;">
+	    </td>
+      <tr>
+        <!-- Part B Section E -->
+      <tr>
+	    <td colspan="6" class="col1" style="background-color:#e6e0e0; font-size:18px;"><b style="font-size:18px;">Fire Safety Stratergy E : Fire Safety Management (FSM)</b></td>
+      <tr>      
+      <tr>
+	    <td  colspan="3" class="col1" style="background-color:#e6e0e0; font-size:18px;"><b>The following measurable items (E<sub>11</sub> to E<sub>14</sub>) of criteria "E<sub>1</sub>: Fire Control Room" are available in the building.</b></td>
+        <td colspan="1" class="col2">Yes</td>
+        <td colspan="1" class="col3">No</td>
+          <td colspan="1" class="col4">Weight</td>
+      <tr>       
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">E<sub>11</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">A fire control (FCR) in 120 minutes fire rated enclosure is located at entrance floor with direct access</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="141" name="optione11" id="optione11yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="142" name="optione11" id="optione11no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optione11w" id="optione11now" style="width:45px;">
+	    </td>
+      <tr> 
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">E<sub>12</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Detailed floor plan of building with details of all firefighting systems on floors is available in FCR</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="143" name="optione12" id="optione12yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="144" name="optione12" id="optione12no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optione12w" id="optione12now" style="width:45px;">
+	    </td>
+      <tr>
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">E<sub>13</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Main fire alarm panel with public address system to all floors and message receiving facility available in FCR </td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="145" name="optione13" id="optione13yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="146" name="optione13" id="optione13no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optione13w" id="optione13now" style="width:45px;">
+	    </td>
+      <tr> 
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">E<sub>14</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">A full time qualified fire officer employed in building as per requirements</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="147" name="optione14" id="optione14yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="148" name="optione14" id="optione14no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optione14w" id="optione14now" style="width:45px;">
+	    </td>
+      <tr>
+      <tr>
+	    <td  colspan="3" class="col1" style="background-color:#e6e0e0; font-size:18px;"><b>The following measurable items (E<sub>21</sub> to E<sub>24</sub>) of criteria "E<sub>2</sub>: Fire Control Room" are available in the building.</b></td>
+        <td colspan="1" class="col2">Yes</td>
+        <td colspan="1" class="col3">No</td>
+          <td colspan="1" class="col4">Weight</td>  
+      <tr>       
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">E<sub>21</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">All exits, corridors and staircases maintained in obstruction free, sound operable and easy to access conditions</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="149" name="optione21" id="optione21yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="150" name="optione21" id="optione21no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optione21w" id="optione21now" style="width:45px;">
+	    </td>
+      <tr> 
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">E<sub>22</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">All fixed firefighting and smoke controlling installations maintained in sound operable conditions and checked regularly</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="151" name="optione22" id="optione22yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="152" name="optione22" id="optione22no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optione22w" id="optione22now" style="width:45px;">
+	    </td>
+      <tr>
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">E<sub>23</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Regular trained housekeeping staff provided to maintain building garbage free</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="153" name="optione23" id="optione23yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="154" name="optione23" id="optione23no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optione23w" id="optione23now" style="width:45px;">
+	    </td>
+      <tr> 
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">E<sub>24</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Open naked fire, flames and storage of inflammable material is prohibited inthe permises</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="155" name="optione24" id="optione24yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="156" name="optione24" id="optione24no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optione24w" id="optione24now" style="width:45px;">
+	    </td>
+      <tr>
+      <tr>
+	    <td  colspan="3" class="col1" style="background-color:#e6e0e0; font-size:18px;"><b>The following measurable items (E<sub>31</sub> to E<sub>35</sub>) of criteria "E<sub>3</sub>: Fire drills, fire Orders and user guide manual" are available in the building.</b></td>
+        <td colspan="1" class="col2">Yes</td>
+        <td colspan="1" class="col3">No</td>  
+          <td colspan="1" class="col4">Weight</td> 
+      <tr>       
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">E<sub>31</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Fire Safety Plan of entire building is ready and has been distributed and explained to the occupants</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="157" name="optione31" id="optione31yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="158" name="optione31" id="optione31no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optione31w" id="optione31now" style="width:45px;">
+	    </td>
+      <tr> 
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">E<sub>32</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Fire Drills are conducted regularly as per schedule and record of past drills available</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="159" name="optione32" id="optione32yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="160" name="optione32" id="optione32no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optione32w" id="optione32now" style="width:45px;">
+	    </td>
+      <tr>
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">E<sub>33</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Fire Notices are displayed at vantage points and occupants made thoroughly conversant with regular training</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="161" name="optione33" id="optione33yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="162" name="optione33" id="optione33no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optione33w" id="optione33now" style="width:45px;">
+	    </td>
+      <tr> 
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">E<sub>34</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">A Personal Fire Instruction card with details of floor plan, exit route and instructions to followed in case of fire given to all occupants</td>  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="163" name="optione34" id="optione34yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="164" name="optione34" id="optione34no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optione34w" id="optione34now" style="width:45px;">
+	    </td>
+      <tr>
+      <tr>
+	    <td colspan="1" class="col1" style="background-color:#e6e0e0; font-size:18px;">E<sub>35</sub></td>
+        <td colspan="2" class="col2" style="background-color:#e6e0e0; font-size:18px;">Safe Practice Manual about storage of inflammable material and use of gas and electrical appliances given to occupants  
+	    <td colspan="1" class="col3">
+            <input type="radio" tabindex="165" name="optione35" id="optione35yes">
+	    </td>
+          <td colspan="1" class="col4">
+            <input type="radio" tabindex="166" name="optione35" id="optione35no">
+	    </td>
+          <td colspan="1" class="col5">
+            <input type="text" name="optione35w" id="optione35now" style="width:45px;">
+	    </td>
+      <tr>
+     </table>
+        </div>
+        <!--<input style="margin-top:10px;"type="submit">-->
+        <button style=""onclick="window.print()">Print This Page</button>
+        <button style="margin-top:10px;" onclick="GenerateGraph(); return false;">Submit</button>
+        </center>
+        <div style="float:left; margin-left: 100px;" id="chartContainer" style="height: 400px; width: 40%;">
+        
+        </div>
+        
+        <div style="float:right; display:inline; margin-top:120px; margin-right:200px;">
+           
+        <center>
+         <table border="1" cellpadding="2" cellspacing="0" style="background-color: lightblue;">
+        <tr>
+            <td>Index Values</td>
+            <td>Star Rating Scale</td>
+            <td>Fire Safety Level</td>
+        </tr>
+        <tr>
+            <td>&#60; 0.25</td>
+            <td>*</td>
+            <td style="background-color: darkred;">Dark Red</td>
+        </tr>
+        <tr>
+            <td>0.25 - 0.48</td>
+            <td>**</td>
+            <td style="background-color: red;">Light Red</td>
+        </tr>
+        <tr>
+            <td>0.48 - 0.72</td>
+            <td>***</td>
+            <td style="background-color: yellow;">Yellow</td>
+        </tr>
+        <tr>
+            <td>0.72 - 0.87</td>
+            <td>****</td>
+            <td style="background-color: #00FF00;">Light Green</td>
+        </tr>
+        <tr>
+            <td>&#62; 0.87</td>
+            <td>******</td>
+            <td style="background-color: green;">Dark Green</td>
+        </tr>
+        
+        </table></center><br><br>
+            <b>NOTE:</b> Please hover the mouse over the bars to see the actual value.
+       </div>
+         
+    </form>
+    </body>
+</html>
+
+     
+    
