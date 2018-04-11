@@ -1,0 +1,21 @@
+Step 1.
+Extract or Unzip the folder (fire Safety Assessment) using winrar or winzip.
+Step 2.
+Click on the folder (fire Safety Assessment) and look for (examples) folder with in that and click on it.
+Step 3.
+Now in (examples) folder look for (02-column-chart) folder and open the file index.html with Google Chrome Browser.
+Step 4.
+Now once the file is open you will find a form.
+Step 5.
+Input your details in the first four lines.
+Step 6.
+Please input all the necessary weightages in the input boxes provided along with the module names that should be with 0-1 
+(for example A1-0.32).
+Step 7.
+Click the submit button to get the graph representing the values and risk factor. Please hover your mouse over the bars to
+view the exact values.
+Step 8.
+Please click print in order to save the whole document as a PDF file.
+
+Note : The data will be stored with in a browser, if the user either changes the Operating System or Browser, the user 
+needs to input the values again.
